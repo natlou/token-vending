@@ -12,11 +12,11 @@ contract Vendor {
   }
 
   // ToDo: create a payable buyTokens() function:
-  
+
   uint256 public constant tokensPerEth = 100;
 
   function buyTokens() public payable {
-
+    yourToken.transfer(msg.sender, msg.value * tokensPerEth);
   }
 
   // ToDo: create a withdraw() function that lets the owner withdraw ETH
