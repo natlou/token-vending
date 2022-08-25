@@ -25,10 +25,14 @@ const func: DeployFunction = async (hre: HardhatRuntimeEnvironmentExtended) => {
   // Todo: transfer the tokens to the vendor
   console.log("\n 🏵  Sending all 1000 tokens to the vendor...\n");
 
-  await yourToken.transfer(
+  const result = await yourToken.transfer(
     vendor.address,
     ethers.utils.parseEther("1000")
   );
+
+  const vendorAddress = await yourToken.balanceOf(vendor.address);
+
+  console.log(Number(vendorAddress._hex));
 
   await vendor.transferOwnership("**YOUR FRONTEND ADDRESS**");
 };
