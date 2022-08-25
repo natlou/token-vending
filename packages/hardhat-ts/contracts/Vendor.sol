@@ -4,7 +4,7 @@ pragma solidity >=0.8.0 <0.9.0;
 import "@openzeppelin/contracts/access/Ownable.sol";
 import './YourToken.sol';
 
-contract Vendor {
+contract Vendor is Ownable {
   YourToken public yourToken;
 
   constructor(address tokenAddress) public {
