@@ -5,6 +5,7 @@ import "@openzeppelin/contracts/access/Ownable.sol";
 import './YourToken.sol';
 
 contract Vendor is Ownable {
+
   YourToken public yourToken;
 
   constructor(address tokenAddress) public {
@@ -23,6 +24,10 @@ contract Vendor is Ownable {
   }
 
   // ToDo: create a withdraw() function that lets the owner withdraw ETH
+
+  function withdraw() public onlyOwner {
+    payable(msg.sender).transfer(address(this).balance);
+  }
 
   // ToDo: create a sellTokens() function:
 }

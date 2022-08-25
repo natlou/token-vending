@@ -35,6 +35,8 @@ const func: DeployFunction = async (hre: HardhatRuntimeEnvironmentExtended) => {
   console.log(Number(vendorAddress._hex));
 
   await vendor.transferOwnership("0xa31645F2d789F87fDD29CCB801507FEa414c838b");
+  
 };
+
 export default func;
 func.tags = ['Vendor'];
