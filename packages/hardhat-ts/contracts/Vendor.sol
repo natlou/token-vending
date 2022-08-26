@@ -30,6 +30,9 @@ contract Vendor is Ownable {
     payable(msg.sender).transfer(address(this).balance);
   }
 
-  uint256 public ethBalance = address(this).balance; 
+  function getBalance() public returns (uint256){
+    return payable(address(this)).balance;
+  }
+  
   // ToDo: create a sellTokens() function:
 }
