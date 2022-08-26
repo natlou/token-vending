@@ -17,7 +17,8 @@ contract Vendor is Ownable {
   uint256 public constant tokensPerEth = 100;
 
   event BuyTokens(address buyer, uint256 amountOfEth, uint256 amountOfTokens);
-
+  event SellTokens(address buyer, uint256 amountOfETH, uint256 amountOfTokens);
+  
   function buyTokens() public payable {
     yourToken.transfer(msg.sender, msg.value * tokensPerEth);
     emit BuyTokens(msg.sender, msg.value, msg.value * tokensPerEth);
