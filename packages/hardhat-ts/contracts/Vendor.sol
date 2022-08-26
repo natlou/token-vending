@@ -26,13 +26,9 @@ contract Vendor is Ownable {
   // ToDo: create a withdraw() function that lets the owner withdraw ETH
 
   function withdraw() public onlyOwner {
-
     payable(msg.sender).transfer(address(this).balance);
   }
 
-  function getBalance() public returns (uint256){
-    return payable(address(this)).balance / 1 ether;
-  }
   
   // ToDo: create a sellTokens() function:
 }
