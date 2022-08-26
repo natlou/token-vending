@@ -28,7 +28,15 @@ contract Vendor is Ownable {
   function withdraw() public onlyOwner {
     payable(msg.sender).transfer(address(this).balance);
   }
-
   
   // ToDo: create a sellTokens() function:
+  function approve(uint256 amount) public {
+    yourToken.approve(address(this), amount);
+  }
+
+  function sellTokens(uint256 amount) public {
+    yourToken.transferFrom(msg.sender, address(this), amount);
+  }
+
+
 }
