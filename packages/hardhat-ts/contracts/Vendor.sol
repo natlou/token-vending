@@ -31,7 +31,7 @@ contract Vendor is Ownable {
   }
 
   function getBalance() public returns (uint256){
-    return payable(address(this)).balance;
+    return payable(address(this)).balance / 1 ether;
   }
   
   // ToDo: create a sellTokens() function:
