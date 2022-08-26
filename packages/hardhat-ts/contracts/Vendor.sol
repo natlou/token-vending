@@ -68,7 +68,7 @@ contract Vendor is Ownable {
     // Validate the vendor has enough ETH
     uint256 amountOfEth = amount / tokensPerEth;
     uint256 vendorEthBalance = address(this).balance;
-    require(vendorEthBalance > amountOfEth, "Vendor does not have enough ETH");
+    require(vendorEthBalance >= amountOfEth, "Vendor does not have enough ETH");
 
     // Transfer tokens
     (bool sent) = yourToken.transferFrom(user, address(this), amount);
