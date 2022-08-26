@@ -30,8 +30,8 @@ contract Vendor is Ownable {
   }
   
   // ToDo: create a sellTokens() function:
-  function approve(uint256 amount) public {
-    yourToken.approve(address(this), amount);
+  function approve() public {
+    yourToken.approve(address(this), yourToken.balanceOf(msg.sender));
   }
 
   function sellTokens(uint256 amount) public {
